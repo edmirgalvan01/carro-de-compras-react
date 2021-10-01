@@ -4,9 +4,9 @@ import Productos from './components/Productos';
 class App extends Component {
    state = {
       productos: [
-         { nombre: 'Tomate', price: 20, img: '/productos/tomate.jpg' },
-         { nombre: 'Arvejas', price: 15, img: '/productos/arveja.jpg' },
-         { nombre: 'Lechuga', price: 30, img: '/productos/lechuga.jpg' },
+         { name: 'Tomate', price: 20, img: '/productos/tomate.jpg' },
+         { name: 'Arvejas', price: 15, img: '/productos/arbejas.jpg' },
+         { name: 'Lechuga', price: 30, img: '/productos/lechuga.jpg' },
       ],
    };
    render() {
