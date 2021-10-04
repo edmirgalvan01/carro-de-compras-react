@@ -27,7 +27,6 @@ const styles = {
 class DetallesCarro extends Component {
    render() {
       const { carro } = this.props;
-      console.log(carro);
 
       return (
          <div style={styles.detallesCarro}>

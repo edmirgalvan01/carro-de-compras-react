@@ -39,13 +39,22 @@ class App extends Component {
    };
 
    mostrarCarro = () => {
+      if (!this.state.carro.length) {
+         return; //Si no tiene elementos el carro que no retorne nada
+      }
       this.setState({ esCarroVisible: !this.state.esCarroVisible }); //Cambiamos el valor de la propiedad
    };
 
    render() {
+      const { esCarroVisible } = this.state;
+
       return (
          <div>
-            <Navbar carro={this.state.carro} />
+            <Navbar
+               mostrarCarro={this.mostrarCarro}
+               esCarroVisible={esCarroVisible}
+               carro={this.state.carro}
+            />
             <Layout>
                <Title />
                <Productos
