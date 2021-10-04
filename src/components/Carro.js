@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import BubbleAlert from './BubbleAlert';
+import DetallesCarro from './DetallesCarro';
 
 const styles = {
    carro: {
@@ -19,12 +20,20 @@ const styles = {
 
 class Carro extends Component {
    render() {
+      const { carro } = this.props;
+      //Sumamos la cantidad de productos que tiene en el carrito
+      const cantidad = carro.reduce(
+         (acumulador, elemento) => acumulador + elemento.cantidad,
+         0
+      );
+
       return (
          <div>
             <span style={styles.bubble}>
-               <BubbleAlert value={10} />
+               {cantidad !== 0 ? <BubbleAlert value={cantidad} /> : null}
             </span>
             <button style={styles.carro}>Carro</button>
+            <DetallesCarro carro={carro} />
          </div>
       );
    }
